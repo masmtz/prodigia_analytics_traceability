@@ -8,19 +8,15 @@
         <field name="inherit_id" ref="stock.view_picking_form"/>
         <field name="arch" type="xml">
             <field name="move_type" position="before">
-                <field name="analytic_tags_per_lines" invisible="1"/>
-                <field name="account_analytic_id" attrs="{'invisible': ['|',('picking_type_code', '=', 'internal'),('analytic_tags_per_lines','=',True)]}"/>
-                <field name="analytic_tag_ids" attrs="{'invisible': ['|',('picking_type_code', '=', 'internal'),('analytic_tags_per_lines','=',True)]}" widget="many2many_tags"/>
+                <field name="account_analytic_id" attrs="{'invisible': ['|',('picking_type_code', '=', 'internal')]}"/>
+                <field name="analytic_tag_ids" attrs="{'invisible': ['|',('picking_type_code', '=', 'internal')]}" widget="many2many_tags"/>
                 <field name="analytic_acc_id" attrs="{'invisible': [('picking_type_code', '!=', 'internal')], 'readonly':[('state','=',('done'))]}"/>
             </field>
             <xpath expr="//form/sheet/notebook/page[2]/field/tree/field[@name='product_id']" position="after">
-               <field name="analytic_tags_per_lines" invisible="1"/>
-            </xpath>
-            <xpath expr="//form/sheet/notebook/page[2]/field/tree/field[@name='analytic_tags_per_lines']" position="after">
-               <field name="analytic_account_id" attrs="{'required': [('analytic_tags_per_lines','=',True)], 'readonly': [('analytic_tags_per_lines','=',False)]}"/>
+               <field name="analytic_account_id"/>
             </xpath>
             <xpath expr="//form/sheet/notebook/page[2]/field/tree/field[@name='analytic_account_id']" position="after">
-                <field name="analytic_account_tag_ids" attrs="{'required': [('analytic_tags_per_lines','=',True)], 'readonly': [('analytic_tags_per_lines','=',False)]}" widget="many2many_tags"/>
+                <field name="analytic_account_tag_ids" widget="many2many_tags"/>
             </xpath>
         </field>
     </record>

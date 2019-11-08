@@ -8,21 +8,8 @@
         <field name="type">form</field>
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
-            <field name="incoterm_id" position="after">
-                <field name="analytic_account_id" attrs="{'readonly':[('state', 'in', ('cancel','done'))], 'invisible': [('analytic_tags_per_lines','=',True)], 'required': [('analytic_tags_per_lines','=',False)]}"/>
-                <field name="analytic_tags_per_lines" invisible="1"/>
-                <field name="analytic_account_tag_ids" attrs="{'readonly':[('state', 'in', ('cancel','done'))], 'invisible': [('analytic_tags_per_lines','=',True)]}" widget="many2many_tags"/>
-            </field>
-            <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='date_planned']" position="after">
-                <field name="analytic_tags_per_lines" invisible="1"/>
-            </xpath>
-            <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='account_analytic_id']" position="attributes">
-                <attribute name="attrs">{'required': [('analytic_tags_per_lines','=',True)], 'readonly': [('analytic_tags_per_lines','=',False)]}</attribute>
-            </xpath>
-            <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='analytic_tag_ids']" position="attributes">
-                <!-- <attribute name="attrs">{'required': [('analytic_tags_per_lines','=',True)], 'readonly': [('analytic_tags_per_lines','=',False)]}</attribute> -->
-                <attribute name="attrs">{'readonly': [('analytic_tags_per_lines','=',False)]}</attribute>
-            </xpath>
+            
+                        
         </field>
     </record>
 
