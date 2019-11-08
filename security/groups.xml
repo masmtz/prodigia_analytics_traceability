@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <!-- GRUPOS -->
+        <!-- <record id="group_analytic_tags" model="res.groups">
+            <field name="name">Control de etiquetas analíticas</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record> -->
+        <!-- REGLAS DE REGISTRO -->
+        <!-- <record id="rule_suc_journal" model="ir.rule">
+            <field name="name">Diarios por sucursal</field>
+            <field ref="model_account_journal" name="model_id"/>
+            <field name="domain_force">['|',('sucursal_id.id','in',user.sucursal_id.ids),('sucursal_id','=',False)]</field>
+        </record> -->
+    </data>
+</odoo>
