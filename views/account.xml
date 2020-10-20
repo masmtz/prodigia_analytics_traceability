@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-
+<!-- nothing -->
      <record model="ir.ui.view" id="x_account_move_form">
         <field name="name">x_account_move_form</field>
         <field name="model">account.move</field>
